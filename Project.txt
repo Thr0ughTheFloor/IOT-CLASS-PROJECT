@@ -1,0 +1,41 @@
+Projeto de desenvolvimento para o curso de Desenvolvimento de Sistema
+Materia: Internet Of Things
+Instituição: SENAI
+
+Projeto Dispositivo de Segurança Maquinas de Costura 
+
+Versão: 1.0 Alpha
+
+Integrantes:
+
+Nome: Ana Luiza Teixeira Dourado
+Responsavel pela pesquisa sobre desenvolvimento, justificativa do projeto, desafios e soluções.
+
+Nome: Fabio Luis Batista Santos
+Responsavel pela escrita do Artigo seguindo as normas ABNT, pesquisa sobre desenvolvimento, construção do projeto, e commits no GITHUB.
+
+Nome: Igor Victor Da Silva
+Responsavel pela pesquisa da Problematica, tecnologia e ferramentas que serão utilizadas e atualizações futuras. 
+
+Nome: Jaqueline Batista Vieira
+Responsavel pelos teste e resultados, pesquisa e desenvolvimento fo prototipo, hipotese.
+
+Visão geral:
+
+O protótipo está sendo desenvolvido para previnir os acidentes que ocorrem com costureiras(os).
+
+Trava de segurança para previnir acidentes com agulhas em maquinas de costura.
+
+Ate o momento o projeto está sendo desenvolvido seguindo apenas estruturas de maquinas manuais (Mais antigas).
+
+Visão Técnica:
+
+(Em revisão)
+
+Ideias futuras:
+
+1. Implementar e aprimorar estes sistema para maquinais mais atuais.
+
+2. Utilizar da mesma ideia de maquinas de costura para maquinas de corte.
+
+
