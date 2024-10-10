@@ -4,7 +4,7 @@ Instituição: SENAI
 
 Projeto Dispositivo de Segurança Maquinas de Costura 
 
-Versão: 3.0
+Versão: 2.0
 
 Integrantes:
 
@@ -23,36 +23,8 @@ Responsável pelos teste e resultados, pesquisa e desenvolvimento do protótipo,
 
 Visão geral:
 
-O protótipo está sendo desenvolvido para prevenir os acidentes que ocorrem com costureiras(os).
-
-Trava de segurança para prevenir acidentes com agulhas em maquinas de costura.
-
-Ate o momento o projeto está sendo desenvolvido seguindo apenas estruturas de maquinas manuais (Mais antigas).
-
-Visão Técnica:
-
-Principais componentes (Reais + representação tinkercad + características):
-
-	1.Sensor de proximidade capacitiva (Tinkercad: representado pelo sensor ultrassonico)
-		->Nome Modelo: Sensor de Proximidade Capacitivo NPN LJC18A3-H-Z/AX;
-		->Frequência de resposta: 100hz;
-		->Detecção de objetos metálicos e não metálicos;
-		->Distancia de detecção de até 10mm;
-		->Tipo NPN;
-		->Peso 85g;
-
-INFO: https://encurtador.com.br/fdOZi 
 	
-	2. Motor Ponte H Dupla: (Tinkercad: representado pelo motor CC);
-		->Nome Modelo: Driver Motor Ponte H Dupla L298n;
-		->Frequência de resposta: PWM (1khz a 20khz);
-		->Observação: talvez seja necessário um dissipador de calor se utilizarmos grandes frequências
-
-INFO: https://encurtador.com.br/BcChG
-
-	3. LED Vermelho
-	
-	4. Arduino Uno R6
+	(Em revisão)	
 
 Ideias futuras:
 
