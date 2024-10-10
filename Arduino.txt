@@ -1,6 +1,6 @@
-//Codigo projeto 2.0
+//Codigo projeto 3.0
 //Potenciometro irá servir como se fosse o pé da maquina de costura
-//motor irá representar a agulha
+//motor irá representar a agulha 
 //interruptor é o sistema de segurança liga/desliga
 #define poten A0
 #define senPir 6
@@ -8,30 +8,37 @@ int interruptor = 2;
 int led = 3;
 int estadointe = 0;
 int buzzer = 4;
-int i =0;
+int i = 0;
 int cont = 0;
 int pino_motor = 5;
-int leituraSen;
 int velocidadeMotor;
 int valPoten;
 
 
 
+int trig = 13; // Sensor Distancia
+int echo = 12; // Sensor Distancia
+
+int distancia = 0; //distancia que queremos descobrir
+int tempo = 0; // tempo é oq o sensor vai passar
+
 void setup()
 {
   pinMode(led, OUTPUT);
   pinMode(interruptor, INPUT);
-  pinMode(buzzer, OUTPUT);
+  pinMode(buzzer, OUTPUT);  
   digitalWrite(led, LOW);
   pinMode(senPir, INPUT);
+  pinMode(trig, OUTPUT);
+  pinMode(echo, INPUT);
   Serial.begin(9600);
 
 }
 
 void loop()
 {
-
-
+  
+ 	
   //sistema de segurança indicação de ligado e liberando o acesso
   //para começar o processo de costurar
   estadointe = digitalRead(interruptor);
@@ -42,7 +49,7 @@ void loop()
   }else{
     digitalWrite(led, LOW);
   }
-
+   
 }
 
 void acessocostura(){
@@ -53,17 +60,22 @@ void acessocostura(){
     noTone(buzzer);
     delay(200);
     tone(buzzer,3000);
-    delay(200);
+    delay(200); 
     noTone(buzzer);
     delay(200);
   i++;
   }
-
+  
   //leitura do sensor Pir
-  leituraSen = digitalRead(senPir);
-
+    digitalWrite(trig, LOW);
+    digitalWrite(trig, HIGH);
+    digitalWrite(trig, LOW);
+  
+    tempo = pulseIn(echo, HIGH);
+  	distancia = tempo/58.2;
+  
   //condicional de alerta se tem algo na ponta da agulha
-  if(leituraSen == HIGH && velocidadeMotor == 0){
+  if(distancia <= 3 && velocidadeMotor == 0){
     i=0;
     while(i!= 3){
  	tone(buzzer,500);
@@ -71,24 +83,26 @@ void acessocostura(){
     noTone(buzzer);
     delay(200);
     tone(buzzer,3000);
-    delay(200);
+    delay(200); 
     noTone(buzzer);
     delay(200);
   	i++;
+
   }
 
 	}
   //sistema de segurança
-  else if(leituraSen == HIGH && velocidadeMotor > 0){
-
-      velocidadeMotor=0;
-
+  else if(distancia <= 3 && velocidadeMotor > 0){
+    velocidadeMotor = 0;
+    
+      
+ 	   
   }else{
-   valPoten = analogRead(poten);
-   velocidadeMotor = map(valPoten, 0, 1023, 0, 255);
+   valPoten = analogRead(poten); 
+   velocidadeMotor = map(valPoten, 0, 1023, 0, 255); 
   }
-
+  
   analogWrite(pino_motor, velocidadeMotor);
   delay(200);
-
+  
 }
